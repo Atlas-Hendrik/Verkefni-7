@@ -299,6 +299,8 @@ function addProductToCart() {
       listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
       cartList.appendChild(listItem);
       total += item.price;
+  }
+  cartTotal.textContent = total.toFixed(2);
 }
 
 /**
