@@ -316,8 +316,13 @@ function addProductToCart() {
  * @returns undefined
  */
 function showCart() {
-  /* Útfæra */
+  if (cart && cart > 1) {
+    const total = formatPrice(quantity * product.price);
+    return `${product.title} - ${quantity}x${product.price} samtals ${total}`;
+  }
+  return `${product.title} - ${product.price}`;
 }
+
 
 /**
  * Klárar kaup og birtir kvittun í console.
@@ -338,5 +343,33 @@ function showCart() {
  * @returns undefined
  */
 function checkout() {
-  /* Útfæra */
+
+  const shoppingCart = [];
 }
+function calculateTotalPrice(cart) {
+  let total = 0;
+
+  for (const item of cart) {
+    total += item.price * item.quantity;
+  }
+
+  return total;
+}
+
+// Function to simulate the checkout process
+function checkout() {
+  const total = calculateTotalPrice(shoppingCart);
+  console.log("Vöru:");
+
+  for (const item of shoppingCart) {
+    console.log(`${item.name} - Magn: ${item.quantity}`);
+  }
+
+  console.log(`Samtals: $${total.toFixed(2)}`);
+
+  // Here you would typically implement real payment processing logic.
+  // For this example, we'll just log a message..
+  console.log("Takk fyrir!");
+}
+
+checkout();
