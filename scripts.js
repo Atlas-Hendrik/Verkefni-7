@@ -291,7 +291,7 @@ function addProductToCart() {
   const cartList = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
 
-  cartList.innerHTML = '';
+  cartList = ``;
   total = 0;
   for (let i = 0; i < cart.length; i++) {
       const item = cart[i];
