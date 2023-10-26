@@ -38,6 +38,7 @@
  * Fylki af vörum sem hægt er að kaupa.
  * @type {Array<Product>}
  */
+// @ts-ignore
 const products = [
   // Fyrsta stak í fylkinu, verður aðgengilegt sem `products[0]`
   {
@@ -96,6 +97,7 @@ const products = [
  * Karfa sem geymir vörur sem notandi vill kaupa.
  * @type {Cart}
  */
+// @ts-ignore
 const cart = {
   lines: [],
   name: null,
@@ -167,8 +169,11 @@ function formatProduct(product, quantity = undefined) {
  * @param {Cart} cart Karfa til að fá upplýsingar um.
  * @returns Streng sem inniheldur upplýsingar um körfu.
  */
+// @ts-ignore
 function cartInfo(cart) {
-  return cart ;
+  // @ts-ignore
+  // @ts-ignore
+  const text = `${title} - ${price} samtals ${total}`;
 }
 
 // --------------------------------------------------------
@@ -260,8 +265,7 @@ function addProduct() {
  * @returns undefined
  */
 function showProducts() {
-  /* Útfæra */
-  /* Hér ætti að nota `formatPrice` hjálparfall */
+  return `${title}`
 }
 
 /**

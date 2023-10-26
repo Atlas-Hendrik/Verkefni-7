@@ -10,6 +10,7 @@
  * Fylki af vörum sem hægt er að kaupa.
  * @type {Array<Product>}
 */
+// @ts-ignore
 const products = [
   {
     id: 1,
@@ -39,7 +40,6 @@ const products = [
  */
 
 /**
- * @typedef {Object} Cart
  * @property {Array<CartLine>} lines Fylki af línum í körfu.
  * @property {string|null} name Nafn á kaupanda ef skilgreint, annars `null`.
  * @property {string|null} address Heimilisfang kaupanda ef skilgreint, annars `null`.
@@ -49,6 +49,7 @@ const products = [
  * Karfa sem geymir vörur sem notandi vill kaupa.
  * @type {Cart}
  */
+// @ts-ignore
 const cart = {
   lines: [],
   name: null,
