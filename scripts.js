@@ -58,10 +58,6 @@ const products = [
     // Hér skilgreinum við streng í nýrri línu á eftir skilgreiningu á lykli (key) í hlutnum.
     description:
       'Húfa sem heldur hausnum heitum og hvíslar hugsanlega að þér hvaða element væri best að nota.',
-
-    // Verð sem jákvæð heiltala. Getum líka notað `1000` en það er hægt að nota undirstrik (_) til
-    // að gera stórar tölur læsilegri, t.d. `100_000_000`.
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_separators
     price: 5_000,
   },
   {
@@ -121,12 +117,14 @@ const cart = {
  * const price = formatPrice(123000);
  * console.log(price); // Skrifar út `123.000 kr.`
  * @param {number} price Verð til að sníða.
- * @returns Verð sniðið með íslenskum krónu.
+ * @returns {string} Verð sniðið með íslenskum krónu.
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
  */
 function formatPrice(price) {
-  /* Útfæra */
+  return price.toString();
 }
+const price = formatPrice(123000);
+ console.log(price);
 
 /**
  * Athuga hvort `num` sé heiltala á bilinu `[min, max]`.
@@ -136,7 +134,7 @@ function formatPrice(price) {
  * @returns `true` ef `num` er heiltala á bilinu `[min, max]`, annars `false`.
  */
 function validateInteger(num, min = 0, max = Infinity) {
-  /* Útfæra */
+  return min <= num && num <= max;
 }
 
 /**
@@ -151,7 +149,11 @@ function validateInteger(num, min = 0, max = Infinity) {
  * @returns Streng sem inniheldur upplýsingar um vöru og hugsanlega fjölda af henni.
  */
 function formatProduct(product, quantity = undefined) {
-  /* Útfæra */
+  if (quantity && quantity > 1) {
+    const total = formatPrice(quantity * product.price);
+    return `${product.title} - ${quantity}x${product.price} samtals ${total}`;
+  }
+  return `${product.title} - ${product.price}`;
 }
 
 /**
@@ -166,7 +168,7 @@ function formatProduct(product, quantity = undefined) {
  * @returns Streng sem inniheldur upplýsingar um körfu.
  */
 function cartInfo(cart) {
-  /* Útfæra */
+  return cart ;
 }
 
 // --------------------------------------------------------

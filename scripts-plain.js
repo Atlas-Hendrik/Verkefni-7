@@ -9,7 +9,7 @@
 /**
  * Fylki af vörum sem hægt er að kaupa.
  * @type {Array<Product>}
- */
+*/
 const products = [
   {
     id: 1,
