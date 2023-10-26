@@ -295,10 +295,10 @@ function addProductToCart() {
   total = 0;
   for (let i = 0; i < cart.length; i++) {
       const item = cart[i];
-      const listItem = document.createElement("li");
-      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-      cartList.appendChild(listItem);
-      total += item.price;
+      const listProduct = document.createElement("li");
+      listProducts.textContent = `${Products.titil} - $${Product.price.toFixed(2)}`;
+      cartList.appendChild(listProduct);
+      total += Product.price;
   }
   cartTotal.textContent = total.toFixed(2);
 }
