@@ -288,11 +288,17 @@ function showProducts() {
  * @returns undefined
  */
 function addProductToCart() {
-  /* Útfæra */
+  const cartList = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
 
-  /* Hér ætti að nota `validateInteger` hjálparfall til að staðfesta gögn frá notanda */
-  
-  /* Til að athuga hvort vara sé til í `cart` þarf að nota `cart.lines.find` */
+  cartList.innerHTML = '';
+  total = 0;
+  for (let i = 0; i < cart.length; i++) {
+      const item = cart[i];
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+      cartList.appendChild(listItem);
+      total += item.price;
 }
 
 /**
