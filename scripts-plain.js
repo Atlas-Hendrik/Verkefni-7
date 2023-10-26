@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @typedef {Object} Product
  * @property {number} id Auðkenni vöru, jákvæð heiltala stærri en 0.

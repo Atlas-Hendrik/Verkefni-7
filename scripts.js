@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Verkefnalýsing fyrir verkefni 7 með mörgum athugasemdum, sjá einnig yfirferð í fyrirlestri 9.
  * Sjá `scripts-plain.js` fyrir lausn án athugasemda.
@@ -265,7 +266,10 @@ function addProduct() {
  * @returns undefined
  */
 function showProducts() {
-  return `${title}`
+  const id = document.getElementById("product-name");
+  const title = document.getElementById("product-description");
+  const description = document.getElementById("product-price");
+  const price = document.getElementById("product-image");
 }
 
 /**
